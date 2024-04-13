@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>态势感知系统</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <script src="{% static 'js/jquery-3.4.0.min.js' %}"></script>
+    <script src="{% static 'js/echarts/echarts.min.js' %}"></script>
+    <script src="{% static 'js/echarts/world.js' %}"></script>
+</head>
+
+<body>
+    <header style="background-color: #2B91B7;">
+        <div class="container">
+            <h1>态势感知系统</h1>
+            <nav style="margin-top: 10px;">
+                <select onchange="location = this.value;" style="font-size: 18px; padding: 5px; background-color: #2B91B7; color: white; border: none; text-align: left;">
+                    <option value="" selected disabled>选择功能</option>
+                    <option value="/defense">防御</option>
+                    <option value="/log_view">日志查看</option>
+                    <option value="/log_analysis">日志分析</option>
+                </select>
+            </nav>
+        </div>
+    </header>
+    
+
+    <section id="main-content">
+
+        <section id="apache-analysis" class="side-section">
+            <h2>中间件分析统计</h2>
+            <div id="apache-chart" class="chart"></div>
+            <script src="{% static 'js/middleware.js' %}"></script>
+        </section>
+
+        <section id="world-map" class="chart-section">
+            <h2>攻击态势</h2>
+            <div id="world-chart" class="chart"></div>
+            <script src="{% static 'js/attach.js' %}"></script>
+        </section>
+
+        <section id="network-analysis" class="chart-section">
+            <h2>流量分析统计</h2>
+            <div id="network-chart" class="chart"></div>
+        </section>
+    
+    </section>
+
+    <section id="attack-events">
+        <div class="container">
+            <h2>攻击事件显示</h2>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <th>源IP</th>
+                        <th>目的IP</th>
+                        <th>类型</th>
+                        <th>时间</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for event in attack_events %}
+                    <tr>
+                        <td>{{ event.source_ip }}</td>
+                        <td>{{ event.destination_ip }}</td>
+                        <td>{{ event.attack_type }}</td>
+                        <td>{{ event.timestamp }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Situation Awareness Platform. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

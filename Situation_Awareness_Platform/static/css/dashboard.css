@@ -1,0 +1,141 @@
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: #2B91B7;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+/* Main Content */
+#main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.chart-section {
+    flex: 1;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.side-section {
+    flex: 1;
+    left: 10px;
+    width: 500px; /* 可选：定义 side-section 元素的固定宽度 */
+}
+
+.chart {
+    width: 750px;
+    height: 750px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#apache-chart {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#network-chart {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.side-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.chart-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.container h2{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Attack Events */
+#attack-events {
+    background-color: #f0f0f0;
+    padding: 20px 0;
+}
+
+.event-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.event-table th, .event-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.event-table th {
+    background-color: #2B91B7;
+    color: #fff;
+}
+
+.event-table tr:nth-child(even) {
+    background-color: #fff;
+}
+
+.event-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Footer */
+footer {
+    background-color: #2B91B7;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 14px;
+}
